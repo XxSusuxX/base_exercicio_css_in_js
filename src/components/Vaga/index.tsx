@@ -1,18 +1,18 @@
-import styles from './Vaga.module.css'
+import { EstiloVaga, EstiloVagaLink, EstiloVagaTitulo } from "./style";
 
 type Props = {
-  titulo: string
-  localizacao: string
-  nivel: string
-  modalidade: string
-  salarioMin: number
-  salarioMax: number
-  requisitos: string[]
-}
+  titulo: string;
+  localizacao: string;
+  nivel: string;
+  modalidade: string;
+  salarioMin: number;
+  salarioMax: number;
+  requisitos: string[];
+};
 
 const Vaga = (props: Props) => (
-  <li className={styles.vaga}>
-    <h3 className={styles.vagaTitulo}>{props.titulo}</h3>
+  <EstiloVaga>
+    <EstiloVagaTitulo>{props.titulo}</EstiloVagaTitulo>
     <ul>
       <li>Localizacao: {props.localizacao}</li>
       <li>Senioridade: {props.nivel}</li>
@@ -20,12 +20,10 @@ const Vaga = (props: Props) => (
       <li>
         Salário: {props.salarioMin} - {props.salarioMax}
       </li>
-      <li>Requisitos: {props.requisitos.join(', ')}</li>
+      <li>Requisitos: {props.requisitos.join(", ")}</li>
     </ul>
-    <a className={styles.vagaLink} href="#">
-      Ver detalhes e candidatar-se
-    </a>
-  </li>
-)
+    <EstiloVagaLink href="#">Ver detalhes e candidatar-se</EstiloVagaLink>
+  </EstiloVaga>
+);
 
-export default Vaga
+export default Vaga;
